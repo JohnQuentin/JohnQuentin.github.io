@@ -1,250 +1,101 @@
-/**************
-    Globals
-***************/
-
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,600');
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
 * {
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            height: 100%;           
+        }
+        body {
+            background: #fff;   
+            position: relative;             
+        }
 
-section {
-  padding-top: 4rem;
-  width: 50%;
-  margin: auto;
-}
-h1 {
-  font-size: 2rem;
-  font-weight: 500;
-}
-details[open] summary ~ * {
-  animation: open 0.3s ease-in-out;
-}
+        section {
+            padding-top: 5%;
+            min-height: 100%;
+            font-weight: 300;
+            color: #2a3039;
+            z-index: 1;
+            position: relative;
+        }
+        section h1 {
+            font-size: 35px;
+        }
 
-@keyframes open {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-details summary::-webkit-details-marker {
-  display: none;
-}
+        #home, #contact {
+            background: #343c47;
+            color: #ffffff;
+        }
+        #skills {
+            background: #f5f8fb;    
+        }
 
-details summary {
-  width: 100%;
-  padding: 0.5rem 0;
-  border-top: 1px solid black;
-  position: relative;
-  cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 300;
-  list-style: none;
-}
+        .dotnav-right {
+            right: 10px;
+            top: 50%;
+            margin-top: -50px;
+            height: 100px;
+            z-index: 999;
+            position: fixed;
+        }
 
-details summary:after {
-  content: "+";
-  color: black;
-  position: absolute;
-  font-size: 1.75rem;
-  line-height: 0;
-  margin-top: 0.75rem;
-  right: 0;
-  font-weight: 200;
-  transform-origin: center;
-  transition: 200ms linear;
-}
-details[open] summary:after {
-  transform: rotate(45deg);
-  font-size: 2rem;
-}
-details summary {
-  outline: 0;
-}
-details p {
-  font-size: 0.95rem;
-  margin: 0 0 1rem;
-  padding-top: 1rem;
-}
-body {
-    font-family: 'Fira Sans', sans-serif;
-    padding-bottom: 20px;
-}
+        .dotnav {
+            padding: 0;
+            list-style: none;
+            font-size: 0.001px;
+        }
 
+        .dotnav > li {
+            display: inline-block;
+            font-size: 1rem;
+            vertical-align: top;
+        }
+        .dotnav > li:nth-child(n+2) {
+            margin-left: 15px;
+        }
 
-/**************
-    Splash
-***************/
-
-#splash {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#splash header {
-    text-align: center;
-    width: 40%;
-    margin: 0 auto;
-}
-
-#splash header *:hover {
-    cursor: default;
-}
-
-.title.is-1 {
-    letter-spacing: 6px;
-}
-
-.title-lines {
-    width: 0;
-    margin: 0;
-}
-
-.title-lines:first-of-type {
-    margin-bottom: 1.5rem;
-}
-
-.title-lines:last-of-type {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.subtitle.is-3 {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-}
-
-.scroll-button {
-    position: absolute;
-    bottom: 2rem;
-    width: 100%;
-    text-align: center;
-}
-
-.button:active,
-.button:focus {
-    border: none;
-    box-shadow: none;
-}
-
-.scroll-button a {
-    border: none;
-}
-
-.scroll-button .icon {
-    font-size: 2rem;
-}
-
-
-/**************
-    Gallery
-***************/
-
-#gallery {
-    padding-top: 10%
-}
-
-.image-node {
-    width: 1064px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    margin-bottom: 50px;
-}
-
-.image.is-256x256 {
-    padding: 5px;
-}
-
-.hover-layer {
-    color: white;
-    position: absolute;
-    width: 256px;
-    height: 256px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.tags {
-    opacity: 0;
-}
-
-.tag {
-    margin: 5px;
-}
-
-
-/**************
-     Footer
-***************/
-
-.contact {
-    text-align: center;
-}
-
-footer {
-    color: #333;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 2rem;
-}
-
-footer a {
-    margin: 15px;
-    color: #333;
-}
-
-footer a:focus {
-    outline: none;
-}
-
-footer a:hover {
-    color: #666;
-}
-
-
-/**********************
-    Responsivity, if that word exists, maybe it's responsiveness. Maybe neither.
-**********************/
-
-@media screen and (max-width: 550px) {
-    .image-node {
-        width: 264px;
-    }
-}
-
-@media screen and (min-width: 551px) and (max-width: 803px) {
-    .image-node {
-        width: 532px;
-    }
-}
-
-@media screen and (min-width: 804px) and (max-width: 1063px) {
-    .image-node {
-        width: 798px;
-    }
-}
-
-@media screen and (max-width: 1180px) {
-    .title.is-1 {
-        font-size: 2rem;
-    }
-    .subtitle.is-3 span {
-        font-size: 1.5rem;
-    }
-    #splash header {
-        width: 90%;
-    }
-}
+        .dotnav > li > a {
+            display: inline-block;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid #66ccff;
+            vertical-align: top;
+            overflow: hidden;
+            padding: 0;
+            text-indent: -999%;
+        }
+        .dotnav > li > a:hover,
+        .dotnav > li > a:focus {
+            background: #66ccff;
+            outline: none;
+        }
+        .dotnav > li > a:active {
+            background: #66ccff;
+        }
+        .dotnav > li.active > a {
+            background: #66ccff;
+        }
+        .dotnav-vertical > li {
+            display: block;
+            margin-right:10px;
+        }
+        .dotnav-vertical > li:nth-child(n+2) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        .awesome-tooltip + .tooltip > .tooltip-inner {
+            background-color: #66ccff; 
+            color: #fff; 
+            border: 1px solid #66ccff; 
+        }
+        .awesome-tooltip + .tooltip.left > .tooltip-arrow{
+            top:50%;
+            right:0;
+            margin-top:-5px;
+            border-top:5px solid transparent;
+            border-bottom:5px solid transparent;
+            border-left:5px solid #66ccff;
+        }
