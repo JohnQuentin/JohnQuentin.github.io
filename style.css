@@ -1,101 +1,167 @@
-* {
-            margin: 0;
-            padding: 0;
-        }
-        body, html {
-            height: 100%;           
-        }
-        body {
-            background: #fff;   
-            position: relative;             
-        }
-
-        section {
-            padding-top: 5%;
-            min-height: 100%;
-            font-weight: 300;
-            color: #2a3039;
-            z-index: 1;
-            position: relative;
-        }
-        section h1 {
-            font-size: 35px;
-        }
-
-        #home, #contact {
-            background: #343c47;
-            color: #ffffff;
-        }
-        #skills {
-            background: #f5f8fb;    
-        }
-
-        .dotnav-right {
-            right: 10px;
-            top: 50%;
-            margin-top: -50px;
-            height: 100px;
-            z-index: 999;
-            position: fixed;
-        }
-
-        .dotnav {
-            padding: 0;
-            list-style: none;
-            font-size: 0.001px;
-        }
-
-        .dotnav > li {
-            display: inline-block;
-            font-size: 1rem;
-            vertical-align: top;
-        }
-        .dotnav > li:nth-child(n+2) {
-            margin-left: 15px;
-        }
-
-        .dotnav > li > a {
-            display: inline-block;
-            -moz-box-sizing: content-box;
-            box-sizing: content-box;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            border: 2px solid #66ccff;
-            vertical-align: top;
-            overflow: hidden;
-            padding: 0;
-            text-indent: -999%;
-        }
-        .dotnav > li > a:hover,
-        .dotnav > li > a:focus {
-            background: #66ccff;
-            outline: none;
-        }
-        .dotnav > li > a:active {
-            background: #66ccff;
-        }
-        .dotnav > li.active > a {
-            background: #66ccff;
-        }
-        .dotnav-vertical > li {
-            display: block;
-            margin-right:10px;
-        }
-        .dotnav-vertical > li:nth-child(n+2) {
-            margin-left: 0;
-            margin-top: 10px;
-        }
-        .awesome-tooltip + .tooltip > .tooltip-inner {
-            background-color: #66ccff; 
-            color: #fff; 
-            border: 1px solid #66ccff; 
-        }
-        .awesome-tooltip + .tooltip.left > .tooltip-arrow{
-            top:50%;
-            right:0;
-            margin-top:-5px;
-            border-top:5px solid transparent;
-            border-bottom:5px solid transparent;
-            border-left:5px solid #66ccff;
-        }
+/* 
+     Burak Can
+     www.brkcan.net
+     twitter.com/neoberg
+*/
+html {
+		width: 100%;
+		height: 100%;
+	}
+	body {
+		background: url(https://s3-us-west-2.amazonaws.com/work-statics/circle-menu/ferris.jpg) no-repeat center;
+		background-size: cover;
+		font-family: 'Myriad Pro',Helvetica, sans-serif;
+		font-size: 12px;
+		color: #fff;
+	}
+	#container {
+		width: 216px;
+		height: 216px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -108px 0 0 -108px;
+	}
+	#main-circle {
+		width: 120px;
+		height: 119px;
+		border-radius: 108px;
+		border: 48px solid rgba(255,255,255,0.5);
+		position:absolute;
+	}
+	#shadow-circle {
+		width: 216px;
+		height: 216px;
+		border-radius: 108px;
+		box-shadow: inset  0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+		position:absolute;
+		top: 0px;
+		left: 0px;
+	}
+	#labels {
+		position: absolute;
+		width: 215px;
+		height: 215px;
+		transition: all 600ms ease-in-out;
+	}
+	.item {
+		position: absolute;
+		display:block;
+		margin: 0px;
+		padding: 0px;
+		opacity: 0;
+	  transform-origin: 50% 424%;
+	}
+	label {
+		position:absolute;
+		display:block;
+		width: 23px;
+		height: 23px;
+		left: 97px;
+		top: 13px;
+		transform-origin: 50% 407%;
+		cursor: pointer;
+	}
+	label[for=bubble] {
+		background: url('https://s3-us-west-2.amazonaws.com/work-statics/circle-menu/bubble.svg') no-repeat top center;
+		transform:rotateZ(0deg);
+	}
+	label[for=cloud] {
+		background: url('https://s3-us-west-2.amazonaws.com/work-statics/circle-menu/cloud.svg') no-repeat top center;
+		transform:rotateZ(-90deg);
+	}
+	label[for=cog] {
+		background: url('https://s3-us-west-2.amazonaws.com/work-statics/circle-menu/cog.svg') no-repeat top center;
+		transform:rotateZ(90deg);
+	}
+	label[for=heart] {
+		background: url('https://s3-us-west-2.amazonaws.com/work-statics/circle-menu/heart.svg') no-repeat top center;
+		transform:rotateZ(180deg);
+	}
+	#arrow {
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background: #000;
+		position: absolute;
+		top: 50px;
+		left: 100px;
+	}
+	#arrow:after {
+		content:"";
+		width: 0px;
+		height: 0px;
+		border: 6px solid transparent;
+		border-bottom: 8px solid #000;
+		position:absolute;
+		left: 1px;
+		top: -11px;
+	}
+	/*Positions*/
+		.item#bubble:checked~#labels {
+			transform:rotateZ(0deg);
+		}
+		.item#cloud:checked~#labels {
+			transform:rotateZ(90deg);
+		}
+		.item#cog:checked~#labels {
+			transform:rotateZ(-90deg);
+		}
+		.item#heart:checked~#labels {
+			transform:rotateZ(180deg);
+		}
+	/*Submenus*/
+	#submenus {
+		perspective: 600px;
+	}
+	.tooltip {
+		min-width: 150px;
+		height: 31px;
+		line-height: 34px;
+		padding: 0px 10px;
+		background: rgba(255,255,255,0.6);
+		position:absolute;
+		border-radius: 2px;
+		top: -45px;
+		left: 24px;
+		box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.16);
+		text-align:center;
+		transition: all 600ms ease-in-out;
+		transform: rotateZ(45deg) rotateY(90deg);
+		transform-origin: 50% 490%;
+		opacity: 0;
+	}
+	.tooltip:after {
+		content:"";
+		border: 8px solid transparent;
+		border-top: 10px solid rgba(255,255,255,0.6);
+		top: 31px;
+		left: 77px;
+		position:absolute;
+	}
+	.tooltip a {
+		color: #000;
+		text-decoration: none;
+		margin: 0px 8px;
+		opacity: 0.9;
+	}
+	.tooltip a:hover {
+		text-decoration: underline;
+	}
+		/*Submenu positions*/
+		.item#bubble:checked~#submenus #sub-bubble {
+			transform: rotateZ(0deg);
+			opacity: 1;
+		}
+		.item#cloud:checked~#submenus #sub-cloud {
+			transform: rotateZ(0deg);
+			opacity: 1;
+		}
+		.item#cog:checked~#submenus #sub-cog {
+			transform: rotateZ(0deg);
+			opacity: 1;
+		}
+		.item#heart:checked~#submenus #sub-heart {
+			transform: rotateZ(0deg);
+			opacity: 1;
+		}
