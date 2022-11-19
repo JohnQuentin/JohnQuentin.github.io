@@ -24,7 +24,13 @@ h1 {
 .hr2 {
   border: 0;
   height: 30px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(9, 84, 132), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(15, 8, 56), rgba(0, 0, 0, 0));
+}
+
+.align {
+  align-items: center;
+  display: block;
+  justify-content: end;
 }
 
 details[open] summary ~ * {
