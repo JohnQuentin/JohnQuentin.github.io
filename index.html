@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
-<title>John homepage</title>
+<title>Nifty</title>
 </head>
 <body>
 
@@ -83,4 +83,39 @@
 </body>
 </html> 
 
+
+<html>
+<head>
+<title>Search Papers</title>
+<link rel="stylesheet" href="mystyle2.css">
+<link rel="icon" href="https://image.flaticon.com/icons/png/512/5208/5208025.png">
+<script type="text/javascript">
+function performSearch() {
+    var searchTerm = encodeURIComponent(document.getElementById('searchField').value);
+	window.open('https://scholar.google.com/scholar?hl=nl&as_sdt=0%2C5&q=' + searchTerm, 'new_window_1');
+	window.open('https://www.base-search.net/Search/Results?lookfor=' +searchTerm, 'new_window_2');
+	window.open('https://core.ac.uk/search?q=' +searchTerm, 'new_window_3');
+	window.open('https://www.semanticscholar.org/search?q=' +searchTerm, 'new_window_4');
+	window.open('https://www.researchgate.net/search/publication?q=' +searchTerm, 'new_window_5');
+
+
+}
+</script>
+</head>
+
+<body>
+<form onsubmit="performSearch(); return false;">
+
+<div class="box"> 
+  <div class="container-1"> 
+
+<input id="searchField" type="text" size="40" placeholder="Search papers..." />
+
+
+  </div> 
+</div>
+
+</form>
+</body>
+</html>
 
