@@ -1,112 +1,160 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <link rel="stylesheet" href="style.css">
-<title>Nifty</title>
+  <meta charset="UTF-8">
+  <title>CodePen - No JS: Tabs that scale down to menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-  <a href="thefile.html">my link</a>
+<!-- partial:index.partial.html -->
+<!-- TAB CONTROLLERS -->
+<input id="panel-1-ctrl"
+       class="panel-radios" type="radio" name="tab-radios" checked>
+<input id="panel-2-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-3-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-4-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+<input id="panel-5-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+<input id="nav-ctrl"
+       class="panel-radios" type="checkbox" name="nav-checkbox">
 
+<header id="introduction">
+  <h1>No JS: Tabs That Scale Down to Menu</h1>
+</header>
 
-<section>
-    <h1>
-      Nifty, if you know what you're looking for
-    </h1>
-    <details>
-      <summary>Mathematics and Statistics</summary>
-      <li><a href="https://www.mathway.com/Algebra" target="blank">Mathway</a></li> 
-      <li><a href="https://wiki.uva.nl/methodologiewinkel/index.php/Hoofdpagina" target="blank">Methologiewinkel</a></li>
-      <li><a href="https://app.statlaunch.com/" target="blank">Statlaunch</a></li>       
-    </details>
-    <details>
-      <summary>Study books</summary>
-        <li><a href="http://libgen.rs/" target="blank">Libgen</a></li>
-        <li><a href="https://www.gutenberg.org/" target="blank">Gutenberg</a></li>
-        <li><a href="https://nl1lib.org/" target="blank">Z-Library</a></li>
-        <li><a href="https://textbooknova.com/" target="blank">TextbookNova</a></li>
-    </details>
-    <details>
-      <summary>Writing</summary>
-      <li><a href="http://www.hemingwayapp.com/" target="blank">HemingWay</a></li>
-      <li><a href="https://www.csgenerator.com/" target="blank">CSgenerator(Paraphraser)</a></li>
-      <li><a href="https://quillbot.com/" target="blank">Quillbot(Paraphraser)</a></li>
-      <li><a href="https://www.thesaurus.com/" target="blank">TheSaurus(Synonym EN)</a></li>
-      <li><a href="https://synoniemen.net/" target="blank">Synoniemen(Synonym NL)</a></li>
-      <li><a href="http://stevehanov.ca/blog/?id=52" target="blank">Auto. remove wordiness from your writing</a></li>
-      <li><a href="https://www.textfixer.com/tools/remove-line-breaks.php" target="blank">Remove line breaks</a></li>    
-    </details>
-    <details>
-      <summary>Send files</summary>
-      <li><a href="https://gofile.io/welcome" target="blank">GoFile</a></li>
-    </details>
-    <details>
-      <summary>Handy-Sites</summary>
-      <li><a href="https://www.similarsites.com/" target="blank">SimilarSites</a></li>
-      <li><a href="https://copypastecharacter.com/all-characters/" target="blank">Copypastecharacter</a></li>
-      <li><a href="https://www.copy.ai/tools" target="blank">BI generator</a></li>
-      <li><a href="https://pfpmaker.com/" target="blank">Profile pic maker</a></li>
-      <li><a href="https://www.autodraw.com/" target="blank">Auto Draw</a></li>
-      <li><a href="https://www.craiyon.com/" target="blank">Drawing from word</a></li>
-      <li><a href="https://fontjoy.com/" target="blank">Font generator</a></li>
-      <li><a href="https://10015.io/tools/bionic-reading-converter" target="blank">10015 IO</a></li>
-    </details>
-  </section>
+<!-- TABS LIST -->
+<ul id="tabs-list">
+    <!-- MENU TOGGLE -->
+    <label id="open-nav-label" for="nav-ctrl"></label>
+    <li id="li-for-panel-1">
+      <label class="panel-label"
+             for="panel-1-ctrl">Radio Toggles</label>
+    </li><!--INLINE-BLOCK FIX
+ --><li id="li-for-panel-2">
+      <label class="panel-label"
+             for="panel-2-ctrl">Input :checked</label>
+    </li><!--INLINE-BLOCK FIX
+ --><li id="li-for-panel-3">
+      <label class="panel-label"
+             for="panel-3-ctrl">The Tabs</label>
+    </li><!--INLINE-BLOCK FIX
+ --><li id="li-for-panel-4">
+      <label class="panel-label"
+             for="panel-4-ctrl">Tab :hover</label>
+    </li><!--INLINE-BLOCK FIX
+ --><li id="li-for-panel-5" class="last">
+      <label class="panel-label"
+             for="panel-5-ctrl">Menu</label>
+    </li>
+    <label id="close-nav-label" for="nav-ctrl">Close</label>
+</ul>
 
-      
-       </div>
-    </main>
- </body>
- 
- <style type="text/css">
- 
- 
- body {
-    font-family: Poppins;
-    font-size: 18px;
- }
- 
- a, a:link {
-   color: black;
-   text-decoration: none;
-   background-position-y: -0%;
-   background-image: linear-gradient( white 50%, #9293a6 50%);
-   transition: background 500ms ease;
-   background-size: 2px;
-   background-size: auto 175%;
- }
- 
- a:hover {
-   background-position-y: 100%;
- 
- }
- </style>
+<!-- THE PANELS -->
+<article id="panels">
+  <div class="container">
+    <section id="panel-1">
+      <main>
+        <h1>Radio Toggles</h1>
+        <p>In this demo, <code>labels</code> for hidden <code>radios</code> toggle the content. This is based on the behavior in which clicked <code>labels</code> for a <code>radio</code> or <code>checkbox</code> input will check that <code>input</code>.</p> 
+<pre>&lt;input id="radio-1" type="radio" name="demo-radios"&gt;
+&lt;input id="radio-2" type="radio" name="demo-radios"&gt;</pre>
+        #radio-1: <input id="radio-1" type="radio" name="demo-radios"> #radio-2: <input id="radio-2" type="radio" name="demo-radios">
+<pre>&lt;label for="radio-1"&gt;Toggle #radio-1&lt;/label&gt;
+&lt;label for="radio-2"&gt;Toggle #radio-2&lt;/label&gt;</pre>
+        <label for="radio-1" class="demo-label">Toggle #radio-1</label>
+        <label for="radio-2" class="demo-label">Toggle #radio-2</label>
+        <p>Click one of the labels above and see its effect on the radios above it.</p>
+        <p>The radios for this pen's tabs are displayed semi-transparently at the top of this demo page.</p>
+      </main>
+    </section>
+    <section id="panel-2">
+      <main>
+        <h1>Input :checked</h1>
+        <p>In CSS, you can query based on the <code>:checked</code> selector for <code>radios</code> and <code>checkboxes</code> to style siblings down the DOM scope. To do this, we can use the <code>~</code>. It will select same-level siblings after the given selector. Because the tab <code>labels</code> in this demo are nested and not immediate siblings, we will need to select their topmost parent that is at the same level as our <code>input</code>.</p>
+        <p>To demonstrate, we will do a simplified version of this with a checkbox:</p>
+        <pre><strong>&lt;!-- invisible input and its label --&gt;</strong>
+&lt;input id="demo-child-toggle" type="checkbox"&gt;
+&lt;label for="demo-child-toggle"&gt;Toggle #demo-child&lt;/label&gt;
 
-</body>
-</html> 
-
-
-<html>
-<script type="text/javascript">
-function performSearch() {
-    var searchTerm = encodeURIComponent(document.getElementById('searchField').value);
-	window.open('https://scholar.google.com/scholar?hl=nl&as_sdt=0%2C5&q=' + searchTerm, 'new_window_1');
-	window.open('https://www.base-search.net/Search/Results?lookfor=' +searchTerm, 'new_window_2');
-	window.open('https://core.ac.uk/search?q=' +searchTerm, 'new_window_3');
-	window.open('https://www.semanticscholar.org/search?q=' +searchTerm, 'new_window_4');
-	window.open('https://www.researchgate.net/search/publication?q=' +searchTerm, 'new_window_5');
-
-
+<strong>&lt;-- parent to select first via "~" --&gt;</strong>
+&lt;div id="demo-parent"&gt;
+  <strong>&lt;-- child to select through parent --&gt;</strong>
+  &lt;div id="demo-child"&gt;#demo-child&lt;/div&gt;
+&lt;/div&gt;</pre>
+        <p>and in our CSS:</p>
+        <pre><strong>/* hiding our checkbox */</strong>
+#demo-child-toggle {
+  display: none;  
 }
-</script>
-<br>
-<body class="align">
-<form onsubmit="performSearch(); return false;">
-<div class="box"> 
-  <div class="container-1"> 
-<input id="searchField" type="text" size="40" placeholder="Search papers..." />
-  </div> 
-</div>
-
-</form>
+<strong>/* selecting the child */</strong>
+#demo-child-toggle:checked ~ #demo-parent #demo-child {
+  color: #c0392b;
+  font-weight: bold;
+  text-transform: uppercase;
+}</pre>
+        <hr>
+        <input id="demo-child-toggle" type="checkbox">
+        <label class="demo-label" for="demo-child-toggle">Toggle #demo-child</label>
+        <div id="demo-parent">
+          <div id="demo-child">#demo-child</div>
+        </div>
+        <hr>
+        <p>As you can see, we can control the style of content that comes after a hidden input by toggling it via its label.</p>
+        <p>At this point you can probably get the picture for how we can conditionally display the tabbed panel content in this pen.</p>
+      </main>
+    </section>
+    <section id="panel-3">
+      <main>
+        <h1>The Tabs</h1>
+        <p>Here is the basic form of a tab in this demo:</p>
+<pre>&lt;li id="li-for-panel-1"&gt;
+  &lt;label class="panel-label" for="panel-1-ctrl"&gt;CSS Radio Toggles&lt;/label&gt;
+&lt;/li&gt;</pre>
+        <p>For the "active" tab to cover the bottom border, the child <code>label</code> gets an additional 2 pixels of <code>padding-top</code> while its parent <code>li</code> gets a <code>translateY(1px)</code>. This not only covers the bottom border, but gives an ever-so-subtle "moving toward you" effect by shifting the title down <code>1px</code>.</p>
+        
+<pre>#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+  transform: translate3d(0, 1px, 0);
+}
+#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
+  padding-top: 26px; <strong>/* instead of "24px" */</strong>
+}</pre>
+      </main>
+    </section>
+    <section id="panel-4">
+      <main>
+        <h1>Tab :hover</h1>
+        <p>When designing the <code>:hover</code> and "active" states I had a dilemma.</p>
+<pre>&lt;li id="li-for-panel-1"&gt;
+  &lt;label class="panel-label" for="panel-1-ctrl"&gt;CSS Radio Toggles&lt;/label&gt;
+&lt;/li&gt;</pre>
+        <p>Each tab <code>li</code> has a <code>border-right</code>. But when the additional <code>border-top</code> appears, we dont want the lighter <code>border-right</code> to be shown all the way to the top. The fix for this is to cancel the <code>border-right</code> on both the <code>:hover</code> and "active" state as well as style the <code>li</code>'s next sibling's <code>border-left</code>.</p>
+        <p>To do this, we can use a combination of the siblings after <code>~</code> and sibling next <code>+</code> selectors:</p>
+        <pre><strong>/* remove the right border on "active" state */</strong>
+#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+  border-right: none;
+}
+<strong>/* add left to next sibling */</strong>
+#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 + li {
+  border-left: 1px solid #dfdfdf;
+}</pre>
+      </main>
+    </section>
+    <section id="panel-5">
+      <main>
+        <h1>Menu</h1>
+        <p>On small screens, the tabs fold down into an expandable menu. To trigger the menu, I use a <code>checkbox</code> (note that it appears at the top of the screen on smaller screen sizes). There are two labels that trigger this checkbox. One opens and the other closes the menu. The one that opens is absolutely positioned invisibly over the "active" menu item. The closing label is at the bottom of the open menu.</p>
+        <p>The best way I have found to show and hide content without using absolute positioning is to use a combination of <code>max-height</code> and <code>opacity</code>. When "inactive", the content has a <code>max-height: 0</code> and <code>opacity: 0</code>.</p>
+        <p>It also has a <code>transition: opacity</code> when I don't know the future height (this panel's content for example) and <code>transition: opacity, max-height</code> when I do know the future height (like the menu). When "active", the <code>max-height</code> and <code>opacity</code> get positive values and the content will transition in. I'm sure flexbox could get me around this hack, but this works for now.</p>   
+      </main>
+    </section>
+  </div>
+</article>
+<!-- partial -->
+  
 </body>
 </html>
-
