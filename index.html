@@ -2,113 +2,56 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>John</title>
+  <title>CodePen - CSS Tabs  😄</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-
 <!-- partial:index.partial.html -->
 <div class="wrapper">
-  <nav class="vertical">
-    <ul>
-      <li>
-        <a href="#">Math. and Stats.</a>
-        <div>
-          <ul>
-            <li><a href="https://www.mathway.com/Algebra" target="blank">Mathway</a></li> 
-            <li><a href="https://wiki.uva.nl/methodologiewinkel/index.php/Hoofdpagina" target="blank">Methologiewinkel</a></li>
-            <li><a href="https://app.statlaunch.com/" target="blank">Statlaunch</a></li>  
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a href="#">Study books</a>
-        <div>
-          <ul>
-            <li><a href="http://libgen.rs/" target="blank">Libgen</a></li>
-            <li><a href="https://www.gutenberg.org/" target="blank">Gutenberg</a></li>
-            <li><a href="https://nl1lib.org/" target="blank">Z-Library</a></li>
-            <li><a href="https://textbooknova.com/" target="blank">TextbookNova</a></li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a href="#">Writing</a>
-        <div>
-          <ul>
-            <li><a href="http://www.hemingwayapp.com/" target="blank">HemingWay</a></li>
-            <li><a href="https://www.csgenerator.com/" target="blank">CSgenerator(Paraphraser)</a></li>
-            <li><a href="https://quillbot.com/" target="blank">Quillbot(Paraphraser)</a></li>
-            <li><a href="https://www.thesaurus.com/" target="blank">TheSaurus(Synonym EN)</a></li>
-            <li><a href="https://synoniemen.net/" target="blank">Synoniemen(Synonym NL)</a></li>
-            <li><a href="http://stevehanov.ca/blog/?id=52" target="blank">Auto. remove wordiness from your writing</a></li>
-            <li><a href="https://www.textfixer.com/tools/remove-line-breaks.php" target="blank">Remove line breaks</a></li>    
-          </details>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a href="#">Send files</a>
-        <div>
-          <ul>
-            <li><a href="https://gofile.io/welcome" target="blank">GoFile</a></li>   
-          </details>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a href="#">Handy-Sites</a>
-        <div>
-          <ul>
-            <li><a href="https://www.similarsites.com/" target="blank">SimilarSites</a></li>
-            <li><a href="https://copypastecharacter.com/all-characters/" target="blank">Copypastecharacter</a></li>
-            <li><a href="https://www.copy.ai/tools" target="blank">BI generator</a></li>
-            <li><a href="https://pfpmaker.com/" target="blank">Profile pic maker</a></li>
-            <li><a href="https://www.autodraw.com/" target="blank">Auto Draw</a></li>
-            <li><a href="https://www.craiyon.com/" target="blank">Drawing from word</a></li>
-            <li><a href="https://fontjoy.com/" target="blank">Font generator</a></li>
-            <li><a href="https://10015.io/tools/bionic-reading-converter" target="blank">10015 IO</a></li> 
-          </details>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
+  <div class="title">
+    CSS Tabs
+    <div class="line"></div>
+  </div>
+  <div class="container">
+    <div class="card tabs">
+        <input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+        <label for="tab-1" class="tab tab-primary">Product</label>
+        <input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+        <label for="tab-2" class="tab tab-success">Options</label>
+        <input id="tab-3" type="radio" class="tab tab-selector" name="tab" />
+        <label for="tab-3" class="tab tab-default">Shipping</label>
+        <input id="tab-4" type="radio" class="tab tab-selector" name="tab" />
+        <label for="tab-4" class="tab tab-warning">Published</label>
+        <div class="tabsShadow"></div>
+        <div class="glider"></div>
+        <section class="content">
+          <div class="item" id="content-1">
+            <h2 class="tab-title tab-primary">Tab 1</h2>
+            <p>
+            1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>
+          </div>
+           <div class="item" id="content-2">
+             <h2 class="tab-title tab-success">Tab 2</h2>
+             <p>
+            2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor </p>
+          </div>
+           <div class="item" id="content-3">
+             <h2 class="tab-title tab-default">Tab 3</h2>
+             <p>
+            3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis </p>
+          </div>
+            <div class="item" id="content-4">
+              <h2 class="tab-title tab-warning">Tab 4</h2>
+              <p>
+            4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </section> 
+   
+    </div>
+  </div>
 </div>
 <!-- partial -->
   
 </body>
 </html>
-
-
-
-
-
-
-<html>
-<script type="text/javascript">
-function performSearch() {
-    var searchTerm = encodeURIComponent(document.getElementById('searchField').value);
-	window.open('https://scholar.google.com/scholar?hl=nl&as_sdt=0%2C5&q=' + searchTerm, 'new_window_1');
-	window.open('https://www.base-search.net/Search/Results?lookfor=' +searchTerm, 'new_window_2');
-	window.open('https://core.ac.uk/search?q=' +searchTerm, 'new_window_3');
-	window.open('https://www.semanticscholar.org/search?q=' +searchTerm, 'new_window_4');
-	window.open('https://www.researchgate.net/search/publication?q=' +searchTerm, 'new_window_5');
-
-
-}
-</script>
-<br>
-<body class="align">
-<form onsubmit="performSearch(); return false;">
-<div class="box"> 
-  <div class="container-1"> 
-<input id="searchField" type="text" size="40" placeholder="Search papers..." />
-  </div> 
-</div>
-
-</form>
-</body>
-</html>
-

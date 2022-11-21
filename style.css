@@ -1,105 +1,195 @@
-* {
-	margin: 0;
-	padding: 0;
-	outline: none;
-	
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/*
+#################################################
+This is part of the UI framework being developed.
+#################################################
+*/
 body {
-    background: #eee;
-    color: #444;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    height: auto !important;
-    height: 100%;
-    min-height: 100%;
-    text-rendering: optimizeLegibility;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
-div.wrapper {
-  margin: 20px auto;
-  width: 350px;
+.title {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 40px;
+  font-weight: 300;
+  color: #636983;
 }
 
-p {
-  font-family: georgia;
-  font-size: 1rem;
-  line-height: 25px;
-  margin: 24px 0;
+.wrapper {
+  background-color: #F6F8FF;
+  width: 100%;
+  min-height: 100vh;
+}
+.wrapper .line {
+  width: 50%;
+  margin: 50px auto 0 auto;
+  height: 1px;
+  background-color: #c3d2e3;
+}
+
+h2.tab-title {
+  font-weight: 300;
+}
+h2.tab-title.tab-primary {
+  color: #636983;
+}
+h2.tab-title.tab-success {
+  color: #51a14c;
+}
+h2.tab-title.tab-default {
+  color: #525252;
+}
+h2.tab-title.tab-warning {
+  color: #b12222;
+}
+
+.container {
+  width: 100%;
+  padding: 10px 0;
   text-align: center;
 }
-
-nav.vertical {
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,.15);
-  overflow: hidden;
-  text-align: center;
+.container .card {
+  max-width: 600px;
+  min-height: 140px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #e3e3e3;
+  margin: 0 auto;
 }
 
-  nav.vertical > ul {
-    list-style-type: none;
+.tabs {
+  text-align: left;
+  position: relative;
+}
+.tabs input {
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+.tabs input + label {
+  font-weight: 300;
+  color: #666;
+  margin: 10px 0;
+  width: 110px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 12px;
+  border: none;
+}
+.tabs input + label:hover {
+  color: #777;
+}
+.tabs .tabsShadow {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  position: absolute;
+  height: 35px;
+  z-index: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.content {
+  margin: 0px auto;
+  text-align: left;
+  color: #666;
+  font-size: 13px;
+  line-height: 20px;
+  position: relative;
+  height: 220px;
+}
+.content .item {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  position: absolute;
+  padding: 10px 20px;
+}
+.content p {
+  margin: 10px 0;
+}
+
+.glider {
+  width: 110px;
+  height: 3px;
+  background: linear-gradient(90deg, #5b3cc4 0%, #3c6cc4 100%);
+  border-radius: 3px;
+  position: absolute;
+  box-shadow: 0px 0px 8px 0px rgba(91, 60, 196, 0.4);
+  transition: all 0.3s;
+}
+
+#tab-1:checked ~ .glider {
+  left: 0px;
+}
+
+#tab-2:checked + label {
+  color: #51a14c;
+}
+#tab-2:checked ~ .glider {
+  background: linear-gradient(90deg, #51a14c 0%, #10c33e 100%);
+  box-shadow: 0px 0px 8px 0px rgba(47, 187, 12, 0.62);
+}
+#tab-2:checked ~ .glider {
+  left: 113px;
+}
+
+#tab-3:checked + label {
+  color: #525252;
+}
+#tab-3:checked ~ .glider {
+  background: linear-gradient(90deg, #4a4a4a 0%, #9b9b9b 100%);
+}
+#tab-3:checked ~ .glider {
+  left: 226px;
+}
+
+#tab-4:checked + label {
+  color: #b12222;
+}
+#tab-4:checked ~ .glider {
+  background: linear-gradient(90deg, #b93232 0%, #ff5d5d 100%);
+  box-shadow: 0px 0px 8px 0px rgba(231, 13, 93, 0.57);
+}
+#tab-4:checked ~ .glider {
+  left: 339px;
+}
+
+#tab-1:checked ~ section #content-1,
+#tab-2:checked ~ section #content-2,
+#tab-3:checked ~ section #content-3,
+#tab-4:checked ~ section #content-4 {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 700px) {
+  .tabs input + label, .glider {
+    width: 70px;
   }
 
-    nav.vertical > ul > li {
-      display: block;
-    }
+  #tab-1:checked ~ .glider {
+    left: 0px;
+  }
 
-      nav.vertical > ul > li > a {
-        background-color: rgb(157, 34, 60);
-        background-image: -webkit-linear-gradient(135deg, rgb(21, 21, 74), rgb(157, 34, 60));
-        background-image: -moz-linear-gradient(135deg, rgb(21, 21, 74)), rgb(157, 34, 60));
-        background-image: -o-linear-gradient(135deg, rgb(21, 21, 74)), rgb(157, 34, 60));
-        background-image: linear-gradient(135deg, rgb(21, 21, 74)), rgb(157, 34, 60));
-        border-bottom: 1px solid rgba(255,255,255,.1);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.1);
-        color: rgb(255,255,255);
-        display: block;
-        font-size: .85rem;
-        font-weight: 500;
-        height: 50px;
-        letter-spacing: .5rem;
-        line-height: 50px;
-        text-shadow: 0 1px 1px rgba(0,0,0,.1);
-        text-transform: uppercase;
-        transition: all .1s ease;
-        text-decoration: none;
-      }
+  #tab-2:checked ~ .glider {
+    left: 73px;
+  }
 
-        nav.vertical > ul > li > a:hover {
-         background-color: rgb(114, 51, 98);
-         background-image: -webkit-linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
-         background-image: -moz-linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
-         background-image: -o-linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98));
-         background-image: linear-gradient(150deg, rgb(114, 51, 98), rgb(114, 51, 98)); 
-         cursor: pointer;
-        }
-        
-          nav.vertical > ul > li > div {
-            background-color: rgb(255,255,255);
-          }
- 
-          nav.vertical > ul > li > div > ul {
-            list-style-type: none;
-          }
+  #tab-3:checked ~ .glider {
+    left: 146px;
+  }
 
-            nav.vertical > ul > li > div > ul > li > a {
-             background-color: rgb(255,255,255);
-             border-bottom: 1px solid rgba(0,0,0,.05);
-             color: #333331;
-             display: block;
-             font-size: 1.1rem;
-             padding: 10px 0;
-             text-decoration: none;
-             transition: all 0.15s linear;
-            }
-
-              nav.vertical > ul > li > div > ul > li:hover > a {
-                background-color: lightBlue;
-                color: rgb(255,255,255);
-                padding: 10px 0 10px 50px;
-              }
+  #tab-4:checked ~ .glider {
+    left: 219px;
+  }
+}
