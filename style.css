@@ -212,7 +212,7 @@ body {
   color: #fff;
 }
 [data-type="iceland"] .content__left {
-  background-image: url("https://images.unsplash.com/photo-1610905376670-5e7e0e8a3cfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  background-image: url("https://images.unsplash.com/photo-1626280472861-038884665c38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTR8fGZvcm11bGElMjAxfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
 }
 .spinner--right [data-type="iceland"] .content__left {
   background-image: none;
