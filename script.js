@@ -1,53 +1,51 @@
-/* -- Carousel Navigation -- */
+$(document).ready(function() {
 
-let activeIndex = 0;
+  var curPage = 1;
+  var numOfPages = $(".skw-page").length;
+  var animTime = 1000;
+  var scrolling = false;
+  var pgPrefix = ".skw-page-";
 
-const slides = document.getElementsByTagName("article");
+  function pagination() {
+    scrolling = true;
 
-const handleLeftClick = () => {
-  const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : slides.length - 1;
-  
-  const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
-        nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
-        
-  currentSlide.dataset.status = "after";
-  
-  nextSlide.dataset.status = "becoming-active-from-before";
-  
-  setTimeout(() => {
-    nextSlide.dataset.status = "active";
-    activeIndex = nextIndex;
+    $(pgPrefix + curPage).removeClass("inactive").addClass("active");
+    $(pgPrefix + (curPage - 1)).addClass("inactive");
+    $(pgPrefix + (curPage + 1)).removeClass("active");
+
+    setTimeout(function() {
+      scrolling = false;
+    }, animTime);
+  };
+
+  function navigateUp() {
+    if (curPage === 1) return;
+    curPage--;
+    pagination();
+  };
+
+  function navigateDown() {
+    if (curPage === numOfPages) return;
+    curPage++;
+    pagination();
+  };
+
+  $(document).on("mousewheel DOMMouseScroll", function(e) {
+    if (scrolling) return;
+    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+      navigateUp();
+    } else { 
+      navigateDown();
+    }
   });
-}
 
-const handleRightClick = () => {
-  const nextIndex = activeIndex + 1 <= slides.length - 1 ? activeIndex + 1 : 0;
-  
-  const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
-        nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
-  
-  currentSlide.dataset.status = "before";
-  
-  nextSlide.dataset.status = "becoming-active-from-after";
-  
-  setTimeout(() => {
-    nextSlide.dataset.status = "active";
-    activeIndex = nextIndex;
+  $(document).on("keydown", function(e) {
+    if (scrolling) return;
+    if (e.which === 38) {
+      navigateUp();
+    } else if (e.which === 40) {
+      navigateDown();
+    }
   });
-}
 
-/* -- Mobile Nav Toggle -- */
-
-const nav = document.querySelector("nav");
-
-const handleNavToggle = () => {  
-  nav.dataset.transitionable = "true";
-  
-  nav.dataset.toggled = nav.dataset.toggled === "true" ? "false" : "true";
-}
-
-window.matchMedia("(max-width: 800px)").onchange = e => {
-  nav.dataset.transitionable = "false";
-
-  nav.dataset.toggled = "false";
-};
+});
